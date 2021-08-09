@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "adedejistephen.com-v2",
+    siteUrl: "https://adedejistephen.com",
+    title: "Adedeji Stephen - Software Engineer",
   },
   plugins: ["gatsby-plugin-postcss"],
 };

@@ -5,7 +5,9 @@ import Heading1 from './Typography/Heading1';
 export default function Chatter() {
   return (
     <div className='spacer'>
-      <div className='bg-blue20 text-center px-2 md:px-0 py-20 md:py-32'>
+      <div
+        className='bg-blue20 text-center px-2 md:px-0 py-20 md:py-32'
+        id='contact'>
         <Heading1 className='mb-6 md:mb-8 text-glow10'>
           What are you working on?
         </Heading1>

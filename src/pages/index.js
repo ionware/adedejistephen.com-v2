@@ -16,7 +16,9 @@ export default function IndexPage() {
         <Projects />
       </div>
       <Chatter />
-      <Footer />
+      <div className='container'>
+        <Footer />
+      </div>
     </div>
   );
 }

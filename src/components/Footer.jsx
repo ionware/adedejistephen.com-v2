@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <div className='spacer container mb-14 md:mb-0 text-sm md:text-base'>
+    <div className='spacer mb-14 md:mb-0 text-sm md:text-base'>
       <footer className='py-6'>
         <div className='flex flex-col md:flex-row md:justify-between md:items-end'>
           <div className='order-2 md:order-1'>

@@ -5,7 +5,7 @@ import Heading3 from './Typography/Heading3';
 export default function Projects() {
   return (
     <div className='spacer'>
-      <div className='mb-8'>
+      <div className='mb-8' id='projects'>
         <Heading3>Projects</Heading3>
       </div>
       <div>

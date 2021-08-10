@@ -56,6 +56,6 @@
   .container {
     max-width: 920px;
     margin: 0 auto;
-    @apply px-4 md:px-0;
+    @apply px-4 md:px-10 lg:px-0;
   }
 }

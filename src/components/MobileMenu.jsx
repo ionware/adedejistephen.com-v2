@@ -6,7 +6,7 @@ import { BsBook, BsPerson, BsChatSquareDots } from 'react-icons/bs';
 export default function MobileMenu() {
   return (
     <div
-      className='fixed md:hidden w-full bg-blue30 text-blue50 py-5 px-10 z-20'
+      className='fixed md:hidden w-full text-blue50 py-5 px-10 z-20'
       style={{ bottom: 0, backgroundColor: '#0B1115' }}>
       <div>
         <nav>

@@ -3,11 +3,11 @@ import './src/css/app.css';
 import React from 'react';
 import MobileMenu from './src/components/MobileMenu';
 
-export const wrapPageElement = ({ element, props }) => {
+export const wrapPageElement = ({ element }) => {
   return (
-    <div className='page-wrapper' {...props}>
+    <>
       {element}
       <MobileMenu />
-    </div>
+    </>
   );
 };

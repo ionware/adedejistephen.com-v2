@@ -28,14 +28,6 @@
     @apply text-glow10 transition-colors duration-500;
   }
 
-  .spacer {
-    @apply mb-16 md:mb-24;
-  }
-
-  .font-cursive {
-    font-family: 'Allura', cursive;
-  }
-
   .btn {
     border: 2px solid rgba(124, 201, 255, 0.41);
     border-radius: 6px;
@@ -57,5 +49,15 @@
     max-width: 920px;
     margin: 0 auto;
     @apply px-4 md:px-10 lg:px-0;
+  }
+}
+
+@layer utilities {
+  .spacer {
+    @apply mb-16 md:mb-24;
+  }
+
+  .font-cursive {
+    font-family: 'Allura', cursive;
   }
 }

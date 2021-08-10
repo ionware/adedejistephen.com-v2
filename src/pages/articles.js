@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import Header from '../components/Header';
 import Heading1 from '../components/Typography/Heading1';
 import ArticleList from '../components/ArticleList';
@@ -6,6 +7,7 @@ import ArticleList from '../components/ArticleList';
 export default function Articles() {
   return (
     <div className='container'>
+      <SEO title='Knowledge is light' />
       <Header />
       <div className='spacer'>
         <Heading1>Articles</Heading1>

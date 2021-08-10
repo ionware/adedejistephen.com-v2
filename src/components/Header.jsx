@@ -7,8 +7,8 @@ export default function Header() {
       <div>
         <Link
           to='/'
-          className='font-bold text-2xl underline md:text-4xl font-cursive text-glow10'>
-          AS
+          className='font-bold text-2xl font-cursive '>
+          Adedeji Stephen
         </Link>
       </div>
       <div className='hidden md:block'>

@@ -1,12 +1,61 @@
-@layer base {
-  @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;800;900&display=swap');
-
-  html, body {
-    font-family: 'Jost', sans-serif;
-  }
-}
 @tailwind base;
 
 @tailwind components;
 
 @tailwind utilities;
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;800;900&family=Allura&display=swap');
+
+  html,
+  body {
+    min-height: 100%;
+  }
+  body {
+    font-family: 'Jost', sans-serif;
+    background: linear-gradient(
+        158.86deg,
+        #1c2a34 10.36%,
+        #111a20 49.58%,
+        #111a20 49.58%
+      )
+      no-repeat;
+
+    @apply text-text20;
+  }
+
+  a:hover {
+    @apply text-glow10 transition-colors duration-500;
+  }
+
+  .spacer {
+    @apply mb-16 md:mb-24;
+  }
+
+  .font-cursive {
+    font-family: 'Allura', cursive;
+  }
+
+  .btn {
+    border: 2px solid rgba(124, 201, 255, 0.41);
+    border-radius: 6px;
+    padding: 5px 25px;
+    @apply text-text10 font-medium;
+  }
+
+  .btn:hover {
+    @apply text-glow10 bg-blue30 transition-colors duration-500;
+  }
+
+  .glow-text-shadow {
+    text-shadow: 0px 0px 76px rgba(188, 251, 195, 0.3);
+  }
+}
+
+@layer components {
+  .container {
+    max-width: 920px;
+    margin: 0 auto;
+    @apply px-4 md:px-0;
+  }
+}

@@ -1,10 +1,22 @@
-import * as React from "react"
+import * as React from 'react';
+import Header from '../components/Header';
+import Intro from '../components/Intro';
+import RecentArticles from '../components/RecentArticles';
+import Projects from '../components/Projects';
+import Chatter from '../components/Chatter';
+import Footer from '../components/Footer';
 
 export default function IndexPage() {
   return (
     <div>
-      <h1 className='text-4xl'>Adedeji Stephen</h1>
-      <p className='text-gray-600'>Your typical hello world sample app. Shall we begin?</p>
+      <div className='container'>
+        <Header />
+        <Intro />
+        <RecentArticles />
+        <Projects />
+      </div>
+      <Chatter />
+      <Footer />
     </div>
-  )
+  );
 }

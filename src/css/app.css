@@ -1,3 +1,5 @@
+@import './code-block.css';
+
 @tailwind base;
 
 @tailwind components;
@@ -6,6 +8,7 @@
 
 @layer base {
   @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;800;900&family=Allura&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=B612+Mono:wght@400;700&family=PT+Mono&display=swap');
 
   html,
   body {
@@ -22,6 +25,26 @@
       no-repeat;
 
     @apply text-text20;
+  }
+
+  body::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: theme('colors.blue30');
+    border-radius: 10px;
+    outline: none;
+  }
+
+  @screen md {
+    body::-webkit-scrollbar {
+      width: 6px;
+    }
   }
 
   .article-container {

@@ -1,5 +1,5 @@
 import React from 'react';
-import 'prismjs/themes/prism-tomorrow.css';
+// import 'prismjs/themes/prism-tomorrow.css';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import PropTypes from 'prop-types';

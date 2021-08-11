@@ -10,11 +10,13 @@ Adding metadata to pages (such as a title or description) is key in helping sear
 
 React Helmet is a package that provides a React component interface for you to manage your document head.
 
-Gatsby’s react helmet plugin provides drop-in support for server rendering data added with React Helmet. Using the plugin, attributes you add to React Helmet will be added to the static HTML pages that Gatsby builds.
+Gatsby’s react helmet plugin provides drop-in support for server rendering data added with React Helmet. Using the plugin, attributes you add to React Helmet will be added to the static HTML pages that Gatsby builds using ```React.Component```.
 
 ```jsx
 import React from "react"
+// highlight-start
 import PropTypes from "prop-types"
+// highlight-end
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 function SEO({ description, lang, meta, title }) {
@@ -31,6 +33,46 @@ function SEO({ description, lang, meta, title }) {
       }
     `
   )
+
+  class FlavorForm extends React.Component { // highlight-line
+  constructor(props) {
+    super(props);
+    this.state = {value: 'coconut'};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    // highlight-next-line
+    this.setState({value: event.target.value});
+  }
+
+  // highlight-start
+  handleSubmit(event) {
+    alert('Your favorite flavor is: ' + this.state.value);
+    event.preventDefault();
+  }
+  // highlight-end
+
+  render() {
+    return (
+      { /* highlight-range{1,4-9,12} */ }
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Pick your favorite flavor:
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value="grapefruit">Grapefruit</option>
+            <option value="lime">Lime</option>
+            <option value="coconut">Coconut</option>
+            <option value="mango">Mango</option>
+          </select>
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+    );
+  }
+}
 ```
 ## Keep making it better
 In this section, we’ve shown you a few Gatsby-specific tools to improve your site’s performance and prepare to go live.

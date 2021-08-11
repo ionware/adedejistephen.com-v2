@@ -52,6 +52,23 @@
     margin: 0 auto;
   }
 
+  .article-container ol {
+    list-style: none;
+    counter-reset: item;
+  }
+  .article-container ol li {
+    counter-increment: item;
+  }
+  .article-container ol li:before {
+    content: counter(item) '. ';
+    @apply text-blue-700 font-semibold;
+  }
+
+  .article-container ul li:before {
+    content: url('/images/arrow-right.png');
+    @apply mr-3;
+  }
+
   a:hover {
     @apply text-glow10 transition-colors duration-500;
   }

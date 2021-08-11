@@ -18,8 +18,8 @@ export default function ArticleTemplate({ data }) {
         <div>
           <ArticleLayout>
             <div>
-              <Heading1 className='mb-5'>{frontmatter.title}</Heading1>
-              <span className='md:text-lg text-glow10'>
+              <Heading1 className='mb-3'>{frontmatter.title}</Heading1>
+              <span className='md:text-lg text-blue50'>
                 {frontmatter.date} · {timeToRead}mins read
               </span>
             </div>

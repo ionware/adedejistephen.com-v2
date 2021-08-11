@@ -11,7 +11,7 @@ React Helmet is a package that provides a React component interface for you to m
 
 Gatsby’s react helmet plugin provides drop-in support for server rendering data added with React Helmet. Using the plugin, attributes you add to React Helmet will be added to the static HTML pages that Gatsby builds.
 
-```
+```jsx
 import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"

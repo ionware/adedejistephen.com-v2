@@ -24,6 +24,11 @@
     @apply text-text20;
   }
 
+  .article-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
   a:hover {
     @apply text-glow10 transition-colors duration-500;
   }

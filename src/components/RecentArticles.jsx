@@ -5,7 +5,7 @@ import Heading3 from './Typography/Heading3';
 
 export default function RecentArticles() {
   const query = useStaticQuery(graphql`
-    query MyQuery {
+    query {
       allMdx(sort: { fields: frontmatter___date, order: DESC }) {
         nodes {
           frontmatter {
@@ -25,7 +25,7 @@ export default function RecentArticles() {
     <div className='spacer'>
       <div className='flex justify-between pb-3 mb-6 border-b border-blue20'>
         <Heading3>Latest Articles</Heading3>
-        <Link to='/' className='uppercase text-sm'>
+        <Link to='/articles' className='uppercase text-sm'>
           View all
         </Link>
       </div>
@@ -37,7 +37,7 @@ export default function RecentArticles() {
             title={frontmatter.title}
             date={frontmatter.date}
             icon={frontmatter.icon}
-            link={slug}
+            link={`/articles/${slug}`}
           />
         ))}
       </div>

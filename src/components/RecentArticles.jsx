@@ -1,9 +1,26 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import Heading3 from './Typography/Heading3';
 
 export default function RecentArticles() {
+  const query = useStaticQuery(graphql`
+    query MyQuery {
+      allMdx(sort: { fields: frontmatter___date, order: DESC }) {
+        nodes {
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            icon
+          }
+          slug
+        }
+      }
+    }
+  `);
+
+  const articles = query.allMdx?.nodes || [];
+
   return (
     <div className='spacer'>
       <div className='flex justify-between pb-3 mb-6 border-b border-blue20'>
@@ -14,29 +31,30 @@ export default function RecentArticles() {
       </div>
       {/** articles listing */}
       <div className='w-full md:w-4/6'>
-        <Article
-          title='Reducing cognitive load by theming my tools'
-          date='September 08, 2019'
-          icon='/images/atom.png'
-        />
-        <Article
-          title='Code splitting & lazy loading a server side rendered React app'
-          date='September 08, 2019'
-        />
-        <Article
-          title='Easy project switching with Itermocil & command line shortcuts'
-          date='September 08, 2019'
-        />
+        {articles.map(({ frontmatter, slug }) => (
+          <Article
+            key={frontmatter.title}
+            title={frontmatter.title}
+            date={frontmatter.date}
+            icon={frontmatter.icon}
+            link={slug}
+          />
+        ))}
       </div>
     </div>
   );
 }
 
-function Article({ title, date, icon }) {
+function Article({ title, date, icon, link }) {
   return (
-    <Link to='/' className='flex group mb-8 transition-colors duration-500'>
+    <Link to={link} className='flex group mb-8 transition-colors duration-500'>
       <div className='mr-3'>
-        <img src={icon} alt='img' width={24} height={24} />
+        <img
+          src={`/images/${icon || 'article.png'}`}
+          alt='img'
+          width={24}
+          height={24}
+        />
       </div>
       <div>
         <h4 className='text-lg font-medium'>{title}</h4>
@@ -47,11 +65,12 @@ function Article({ title, date, icon }) {
 }
 
 Article.propTypes = {
+  link: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   icon: PropTypes.string,
 };
 
 Article.defaultProps = {
-  icon: '/images/article.png',
+  icon: 'article.png',
 };

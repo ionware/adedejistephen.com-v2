@@ -46,17 +46,24 @@ export default function Footer() {
                 <a
                   href='https://github.com/ionware'
                   target='_blank'
-                  rel='noreferrer'>
+                  rel='noreferrer'
+                  aria-label='GitHub'>
                   <FaGithub />
                 </a>
               </li>
               <li className='mr-5'>
-                <a href='https://linkedin.com/in/ionware' rel='noreferrer'>
+                <a
+                  href='https://linkedin.com/in/ionware'
+                  rel='noreferrer'
+                  aria-label='LinkedIn'>
                   <FaLinkedinIn />
                 </a>
               </li>
               <li className=''>
-                <a href='https://twitter.com/ionwarez' rel='noreferrer'>
+                <a
+                  href='https://twitter.com/ionwarez'
+                  rel='noreferrer'
+                  aria-label='Twitter'>
                   <FaTwitter />
                 </a>
               </li>

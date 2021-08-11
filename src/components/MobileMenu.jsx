@@ -12,22 +12,22 @@ export default function MobileMenu() {
         <nav>
           <ul className='flex justify-between items-center text-center text-2xl'>
             <li>
-              <Link to='/'>
+              <Link to='/' aria-label='Home'>
                 <BiHomeAlt />
               </Link>
             </li>
             <li>
-              <Link to='/articles'>
+              <Link to='/articles' aria-label='Articles'>
                 <BsBook />
               </Link>
             </li>
             <li>
-              <Link to='/about'>
+              <Link to='/about' aria-label='About'>
                 <BsPerson />
               </Link>
             </li>
             <li>
-              <Link to='/#contact'>
+              <Link to='/#contact' aria-label='Contact'>
                 <BsChatSquareDots />
               </Link>
             </li>

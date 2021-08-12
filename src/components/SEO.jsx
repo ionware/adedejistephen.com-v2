@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { graphql, useStaticQuery } from 'gatsby';
 
-export default function SEO({ title, description, url }) {
+export default function SEO({ title, description, url, image, article }) {
   const { site } = useStaticQuery(graphql`
     query SEO {
       site {
         siteMetadata {
           defaultTitle: title
           titleTemplate
+          defaultImage: image
           defaultDescription: description
           siteUrl: url
           twitterName
@@ -23,6 +24,7 @@ export default function SEO({ title, description, url }) {
     defaultDescription,
     titleTemplate,
     defaultUrl,
+    defaultImage,
     twitterName,
   } = site.siteMetadata;
 
@@ -34,10 +36,20 @@ export default function SEO({ title, description, url }) {
         property='og:description'
         content={description || defaultDescription}
       />
+      <meta
+        property='og:image'
+        content={`${defaultUrl}${image || defaultImage}`}
+      />
+      {(article ? true : null) && <meta property='og:type' content='article' />}
+      <meta name='twitter:card' content='summary_large_image' />
       <meta name='twitter:title' content={title || defaultTitle} />
       <meta
         name='twitter:description'
         content={description || defaultDescription}
+      />
+      <meta
+        name='twitter:image'
+        content={`${defaultUrl}${image || defaultImage}`}
       />
       {twitterName && <meta name='twitter:creator' content={twitterName} />}
     </Helmet>
@@ -48,10 +60,14 @@ SEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   url: PropTypes.string,
+  image: PropTypes.string,
+  article: PropTypes.bool,
 };
 
 SEO.defaultProps = {
   title: '',
   description: '',
   url: '',
+  image: '',
+  article: false,
 };

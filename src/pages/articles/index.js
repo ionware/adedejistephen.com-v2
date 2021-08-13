@@ -9,7 +9,6 @@ import ArticleList from '../../components/ArticleList';
 
 export default function Articles({ data }) {
   const articles = data.allMdx?.nodes;
-  console.log(articles);
 
   return (
     <div>

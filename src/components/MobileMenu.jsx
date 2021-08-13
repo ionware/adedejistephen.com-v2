@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import { BiHomeAlt } from 'react-icons/bi';
 import { BsBook, BsPerson, BsChatSquareDots } from 'react-icons/bs';
 
@@ -12,24 +12,52 @@ export default function MobileMenu() {
         <nav>
           <ul className='flex justify-between items-center text-center text-2xl'>
             <li>
-              <Link to='/' aria-label='Home'>
+              <AniLink
+                paintDrip
+                direction='down'
+                duration={1}
+                hex='#82F9A1'
+                bg='#0B1115'
+                to='/'
+                aria-label='Home'>
                 <BiHomeAlt />
-              </Link>
+              </AniLink>
             </li>
             <li>
-              <Link to='/articles' aria-label='Articles'>
+              <AniLink
+                paintDrip
+                direction='down'
+                duration={1}
+                hex='#82F9A1'
+                bg='#0B1115'
+                to='/articles'
+                aria-label='Articles'>
                 <BsBook />
-              </Link>
+              </AniLink>
             </li>
             <li>
-              <Link to='/about' aria-label='About'>
+              <AniLink
+                paintDrip
+                direction='down'
+                duration={1}
+                hex='#82F9A1'
+                bg='#0B1115'
+                to='/about'
+                aria-label='About'>
                 <BsPerson />
-              </Link>
+              </AniLink>
             </li>
             <li>
-              <Link to='/#contact' aria-label='Contact'>
+              <AniLink
+                paintDrip
+                direction='down'
+                duration={1}
+                hex='#82F9A1'
+                bg='#0B1115'
+                to='/#contact'
+                aria-label='Contact'>
                 <BsChatSquareDots />
-              </Link>
+              </AniLink>
             </li>
           </ul>
         </nav>

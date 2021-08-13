@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import PropTypes from 'prop-types';
 import Heading3 from './Typography/Heading3';
 
@@ -25,9 +26,15 @@ export default function RecentArticles() {
     <div className='spacer'>
       <div className='flex justify-between pb-3 mb-6 border-b border-blue20'>
         <Heading3>Latest Articles</Heading3>
-        <Link to='/articles' className='uppercase text-sm'>
+        <AniLink
+          cover
+          direction='down'
+          duration={1}
+          bg='#82F9A1'
+          to='/articles'
+          className='uppercase text-sm'>
           View all
-        </Link>
+        </AniLink>
       </div>
       {/** articles listing */}
       <div className='w-full md:w-4/6'>
@@ -47,7 +54,13 @@ export default function RecentArticles() {
 
 function Article({ title, date, icon, link }) {
   return (
-    <Link to={link} className='flex group mb-8 transition-colors duration-500'>
+    <AniLink
+      cover
+      direction='right'
+      duration={1}
+      bg='#82F9A1'
+      to={link}
+      className='flex group mb-8 transition-colors duration-500'>
       <div className='mr-3'>
         <img
           src={`/images/${icon || 'article.png'}`}
@@ -60,7 +73,7 @@ function Article({ title, date, icon, link }) {
         <h4 className='text-lg font-medium'>{title}</h4>
         <span className='text-blue50 text-sm'>{date}</span>
       </div>
-    </Link>
+    </AniLink>
   );
 }
 

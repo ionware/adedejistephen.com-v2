@@ -1,10 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 export default function ArticleList({ date, title, excerpt, link }) {
   return (
-    <Link to={link} className='block group w-full md:w-4/6 lg:w-4/6 mb-14'>
+    <AniLink
+      cover
+      direction='right'
+      duration={1}
+      bg='#82F9A1'
+      to={link}
+      className='block group w-full md:w-4/6 lg:w-4/6 mb-14'>
       <span className='text-sm' style={{ color: '#7AB6D9' }}>
         {date}
       </span>
@@ -13,7 +19,7 @@ export default function ArticleList({ date, title, excerpt, link }) {
       <span className='text-sm' style={{ color: '#7AB6D9' }}>
         Read more...
       </span>
-    </Link>
+    </AniLink>
   );
 }
 

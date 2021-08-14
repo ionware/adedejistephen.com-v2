@@ -11,6 +11,13 @@ module.exports = {
     `gatsby-plugin-postcss`,
     `gatsby-plugin-transition-link`,
     {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `#82F9A1`,
+        showSpinner: true,
+      }
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         icon: `static/images/boy.png`,
